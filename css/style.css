@@ -1,0 +1,176 @@
+/* ===== Variáveis de tema ===== */
+:root {
+  --fundo: #F7F7F4;
+  --texto: #14181F;
+  --texto-suave: #4A5160;
+  --cartao: #FFFFFF;
+  --placeholder: #E3E4DE;
+  --linha: #DADBD4;
+  --destaque: #2F4BFF;
+  --sobre-destaque: #FFFFFF;
+  --rodape-fundo: #14181F;
+  --rodape-texto: #F7F7F4;
+  --fonte-titulo: "Space Grotesk", system-ui, sans-serif;
+  --fonte-texto: Inter, system-ui, sans-serif;
+}
+[data-theme="dark"] {
+  --fundo: #0F131A;
+  --texto: #F3F4F6;
+  --texto-suave: #A8AEBB;
+  --cartao: #1A202B;
+  --placeholder: #252C39;
+  --linha: #2A3140;
+  --destaque: #8DA0FF;
+  --sobre-destaque: #0F131A;
+  --rodape-fundo: #1A202B;
+  --rodape-texto: #F3F4F6;
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+  transition: background .25s, color .25s;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--destaque); }
+:focus-visible { outline: 3px solid var(--destaque); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--fonte-titulo); margin: 0; line-height: 1.1; }
+h2 { font-size: 40px; }
+h3 { font-size: 24px; }
+p { margin: 0; }
+
+/* ===== Topo ===== */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 80px;
+  background: var(--fundo);
+  border-bottom: 1px solid var(--linha);
+}
+.logo { font-family: var(--fonte-titulo); font-weight: 700; font-size: 22px; }
+.menu { display: flex; gap: 32px; }
+.acoes { display: flex; gap: 8px; }
+.botao-tema, .botao-menu {
+  min-height: 44px; border: 1px solid var(--texto); border-radius: 8px;
+  background: transparent; color: var(--texto); cursor: pointer;
+  font: 500 15px var(--fonte-texto);
+}
+.botao-tema { padding: 0 16px; }
+.botao-tema:hover, .botao-menu:hover { background: var(--placeholder); }
+.botao-menu { display: none; width: 44px; font-size: 20px; }
+
+/* ===== Hero ===== */
+.hero {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center;
+  padding: 72px 80px;
+}
+.hero-texto { display: flex; flex-direction: column; gap: 24px; }
+.pequeno { color: var(--texto-suave); }
+.hero h1 { font-size: 72px; }
+.lead { font-size: 20px; color: var(--texto-suave); max-width: 520px; }
+.botoes { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn { padding: 14px 28px; border-radius: 8px; font-weight: 500; text-align: center; }
+.btn-principal { background: var(--destaque); color: var(--sobre-destaque); }
+.btn-principal:hover { color: var(--sobre-destaque); opacity: .88; }
+.btn-borda { border: 1px solid var(--texto); }
+
+/* ===== Fotos (com marcador se a imagem não existir) ===== */
+.foto {
+  margin: 0; position: relative; overflow: hidden;
+  border-radius: 12px; background: var(--placeholder);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--texto-suave);
+}
+.foto::before { content: "[" attr(data-legenda) "]"; position: absolute; }
+.foto img { position: relative; width: 100%; height: 100%; object-fit: cover; }
+.foto-perfil {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+}
+.foto-hobbie { height: 260px; }
+
+/* ===== Seções ===== */
+.secao { padding: 72px 80px; border-top: 1px solid var(--linha); }
+.secao h2 { margin-bottom: 40px; }
+.secao-sobre { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; }
+.secao-sobre h2 { margin: 0; }
+.secao-sobre p { font-size: 18px; line-height: 1.7; color: var(--texto-suave); max-width: 70ch; }
+.grade { display: grid; gap: 24px; }
+.grade.tres { grid-template-columns: repeat(3, 1fr); }
+.cartao {
+  background: var(--cartao); border-radius: 12px; padding: 32px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.cartao p { color: var(--texto-suave); }
+
+/* ===== Rodapé ===== */
+.rodape {
+  padding: 56px 80px; background: var(--rodape-fundo); color: var(--rodape-texto);
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+}
+.rodape h2 { font-size: 32px; margin-bottom: 8px; }
+.rodape a { color: var(--rodape-texto); }
+.rodape a:hover { text-decoration: underline; color: var(--rodape-texto); }
+.redes { display: flex; gap: 24px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ===== Jardinagem: fotos que deslizam (estilo reels) ===== */
+.reels-wrap { position: relative; }
+.reels {
+  height: 420px; overflow-y: auto; border-radius: 12px;
+  scroll-snap-type: y mandatory; scrollbar-width: none;
+  background: var(--placeholder);
+}
+.reels::-webkit-scrollbar { display: none; }
+.reel { margin: 0; height: 100%; scroll-snap-align: start; scroll-snap-stop: always; }
+.reel img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.reels-pontos {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column;
+}
+.ponto {
+  width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.ponto::after {
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,.6); box-shadow: 0 0 0 1px rgba(0,0,0,.35);
+  transition: height .2s, background .2s;
+}
+.ponto.ativo::after { background: #fff; height: 20px; border-radius: 4px; }
+.reels-dica {
+  position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%);
+  background: rgba(0,0,0,.65); color: #fff; font-size: 14px;
+  padding: 6px 14px; border-radius: 999px; pointer-events: none; transition: opacity .3s;
+}
+.reels-dica.some { opacity: 0; }
+
+/* ===== Instrumentos: vídeos que deslizam ===== */
+.reels-video .reels { height: 520px; }
+.reel-video { position: relative; background: #000; }
+.reel-video video { display: block; width: 100%; height: 100%; object-fit: contain; cursor: pointer; }
+.som {
+  position: absolute; top: 12px; left: 12px; min-height: 44px; padding: 0 16px;
+  border: 0; border-radius: 999px; cursor: pointer;
+  background: rgba(0,0,0,.65); color: #fff; font: 500 14px var(--fonte-texto);
+}
+.som:hover { background: rgba(0,0,0,.85); }
+
+/* imagens horizontais aparecem inteiras */
+.reel-contain { background: #000; }
+.reel-contain img { object-fit: contain; }
+
+/* enquadra o rosto na foto de perfil */
+.foto-perfil img { object-position: 60% 35%; }

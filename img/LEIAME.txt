@@ -1,0 +1,7 @@
+Fotos e vídeos do site:
+  img/perfil.jpg   (sua foto - incluída)
+  img/jardinagem-1.jpg e -2.jpg          (incluídas)
+  img/instrumentos-1..4.jpg + video/instrumentos-1..4.mp4   (incluídos)
+  img/grafite-artesanato-2..7.jpg + video/grafite-artesanato-3.mp4   (incluídos)
+
+Para adicionar outro item ao deslizar, copie um bloco <figure class="reel"> em index.html e adicione outro botão .ponto.

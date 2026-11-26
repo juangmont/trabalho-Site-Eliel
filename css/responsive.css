@@ -1,0 +1,49 @@
+/* ===== Tablet ===== */
+@media (max-width: 1024px) {
+  .topo, .hero, .secao, .rodape { padding-left: 40px; padding-right: 40px; }
+  .hero h1 { font-size: 56px; }
+  .grade.tres { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Celular ===== */
+@media (max-width: 768px) {
+  html { scroll-padding-top: 76px; }
+  .topo { padding: 12px 20px; flex-wrap: wrap; }
+  .logo { font-size: 20px; }
+  .botao-menu { display: inline-block; }
+
+  /* menu vira lista que abre e fecha */
+  .menu {
+    display: none; order: 3; width: 100%;
+    flex-direction: column; gap: 0; padding-top: 8px;
+  }
+  .menu.aberto { display: flex; }
+  .menu a { padding: 14px 4px; border-top: 1px solid var(--linha); }
+
+  .hero { grid-template-columns: 1fr; gap: 24px; padding: 32px 20px; }
+  .hero .foto-perfil { order: -1; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+  .hero h1 { font-size: 40px; }
+  .lead { font-size: 17px; }
+  .btn-principal { width: 100%; }
+
+  .secao { padding: 32px 20px; }
+  .secao h2, h2 { font-size: 28px; }
+  .secao h2 { margin-bottom: 20px; }
+  .secao-sobre { grid-template-columns: 1fr; gap: 12px; }
+  .secao-sobre p { font-size: 17px; }
+  .grade.tres { grid-template-columns: 1fr; gap: 16px; }
+  .cartao { padding: 20px; }
+  .foto-hobbie { height: 180px; }
+  h3 { font-size: 20px; }
+
+  .rodape { flex-direction: column; align-items: flex-start; padding: 32px 20px; }
+  .rodape h2 { font-size: 26px; }
+}
+
+@media (max-width: 768px) {
+  .reels { height: 380px; }
+}
+
+@media (max-width: 768px) {
+  .reels-video .reels { height: 480px; }
+}

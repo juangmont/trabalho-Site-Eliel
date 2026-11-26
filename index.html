@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juan Gabriel – Portfólio</title>
+  <meta name="description" content="Portfólio de Juan Gabriel, estudante.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    /* Aplica o tema salvo antes da página aparecer (evita "piscar") */
+    try {
+      var t = localStorage.getItem("tema") ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="#inicio">Juan Gabriel</a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="acoes">
+      <button class="botao-tema" id="botaoTema" type="button" aria-label="Alternar tema claro ou escuro">Modo escuro</button>
+      <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-texto">
+        <p class="pequeno">Olá, eu sou</p>
+        <h1>Juan Gabriel, estudante</h1>
+        <p class="lead">Estudante em busca de aprender, criar e crescer.</p>
+        <div class="botoes">
+          <a class="btn btn-principal" href="#sobre">+ Sobre mim</a>
+          <a class="btn btn-borda" href="#contato">Fale comigo</a>
+        </div>
+      </div>
+      <figure class="foto foto-perfil" data-legenda="Sua foto">
+        <img src="img/perfil.jpg" alt="Foto de Juan Gabriel" onerror="this.remove()">
+      </figure>
+    </section>
+
+    <section class="secao secao-sobre" id="sobre">
+      <h2>Sobre mim</h2>
+      <p>Olá, meu nome é Juan Gabriel e sou estudante de ciência da computação pela UDF, estou atualmente no segundo semestre e nesse site você pode conhecer um pouco mais sobre o meu pessoal e meus hobbies que envolvem principalmente maneiras de expressão.</p>
+    </section>
+
+    <section class="secao" id="hobbies">
+      <h2>Meus hobbies</h2>
+      <div class="grade tres">
+        <article class="cartao">
+          <div class="reels-wrap reels-video">
+            <div class="reels" tabindex="0" aria-label="Vídeos de instrumentos. Deslize para ver mais.">
+              <figure class="reel reel-video">
+                <video src="video/instrumentos-4.mp4" poster="img/instrumentos-4.jpg" muted loop playsinline preload="metadata" aria-label="Tocando guitarra elétrica, em close na mão"></video>
+                <button type="button" class="som" aria-pressed="false">Ativar som</button>
+              </figure>
+              <figure class="reel reel-video">
+                <video src="video/instrumentos-3.mp4" poster="img/instrumentos-3.jpg" muted loop playsinline preload="metadata" aria-label="Tocando guitarra elétrica"></video>
+                <button type="button" class="som" aria-pressed="false">Ativar som</button>
+              </figure>
+              <figure class="reel reel-video">
+                <video src="video/instrumentos-2.mp4" poster="img/instrumentos-2.jpg" muted loop playsinline preload="metadata" aria-label="Tocando violão"></video>
+                <button type="button" class="som" aria-pressed="false">Ativar som</button>
+              </figure>
+              <figure class="reel reel-video">
+                <video src="video/instrumentos-1.mp4" poster="img/instrumentos-1.jpg" muted loop playsinline preload="metadata" aria-label="Tocando violão"></video>
+                <button type="button" class="som" aria-pressed="false">Ativar som</button>
+              </figure>
+            </div>
+            <div class="reels-pontos">
+              <button type="button" class="ponto ativo" aria-label="Ver vídeo 1"></button>
+              <button type="button" class="ponto" aria-label="Ver vídeo 2"></button>
+              <button type="button" class="ponto" aria-label="Ver vídeo 3"></button>
+              <button type="button" class="ponto" aria-label="Ver vídeo 4"></button>
+            </div>
+            <span class="reels-dica">Deslize para ver mais</span>
+          </div>
+          <h3>Instrumentos</h3>
+          <p>Um dos meus hobbies são tocar guitarra, violão e piano, pratico desde os meus 15 anos no meu tempo livre e acho uma atividade boa pra gerar autoconhecimento.</p>
+        </article>
+        <article class="cartao">
+          <div class="reels-wrap">
+            <div class="reels" tabindex="0" aria-label="Fotos de jardinagem. Deslize para ver mais.">
+              <figure class="reel"><img src="img/jardinagem-1.jpg" alt="Jardim com gramado, arbustos redondos e pedras brancas" onerror="this.remove()"></figure>
+              <figure class="reel"><img src="img/jardinagem-2.jpg" alt="Cortador de grama verde passando no gramado" onerror="this.remove()"></figure>
+            </div>
+            <div class="reels-pontos">
+              <button type="button" class="ponto ativo" aria-label="Ver foto 1"></button>
+              <button type="button" class="ponto" aria-label="Ver foto 2"></button>
+            </div>
+            <span class="reels-dica">Deslize para ver mais</span>
+          </div>
+          <h3>Jardinagem</h3>
+          <p>Recentemente comecei com serviços de jardinagem e costumo trabalhar principalmente em jardins com grandes áreas de gramínea.</p>
+        </article>
+        <article class="cartao">
+          <div class="reels-wrap reels-video">
+            <div class="reels" tabindex="0" aria-label="Fotos e vídeo de grafite e artesanato. Deslize para ver mais.">
+              <figure class="reel reel-contain"><img src="img/grafite-artesanato-2.jpg" alt="Escultura de lobo deitado, pintada em tons de cinza, segurada na mão" loading="lazy" onerror="this.remove()"></figure>
+              <figure class="reel reel-video">
+                <video src="video/grafite-artesanato-3.mp4" poster="img/grafite-artesanato-3.jpg" muted loop playsinline preload="metadata" aria-label="Escultura de metal sobre uma mesa de madeira"></video>
+                <button type="button" class="som" aria-pressed="false">Ativar som</button>
+              </figure>
+              <figure class="reel"><img src="img/grafite-artesanato-4.jpg" alt="Grafite escrito BOOM em vermelho e preto, com uma nuvem de cogumelo, em um pilar de ponte" loading="lazy" onerror="this.remove()"></figure>
+              <figure class="reel"><img src="img/grafite-artesanato-5.jpg" alt="Grafite de uma placa vermelha de proibido com uma figura e um sinal de alerta, em um pilar de ponte" loading="lazy" onerror="this.remove()"></figure>
+              <figure class="reel"><img src="img/grafite-artesanato-6.jpg" alt="Grafite de um gato azul sorridente em um pilar de ponte" loading="lazy" onerror="this.remove()"></figure>
+              <figure class="reel"><img src="img/grafite-artesanato-7.jpg" alt="Pilar de ponte com o grafite da placa vermelha, visto de longe" loading="lazy" onerror="this.remove()"></figure>
+            </div>
+            <div class="reels-pontos">
+              <button type="button" class="ponto ativo" aria-label="Ver item 1"></button>
+              <button type="button" class="ponto" aria-label="Ver item 2"></button>
+              <button type="button" class="ponto" aria-label="Ver item 3"></button>
+              <button type="button" class="ponto" aria-label="Ver item 4"></button>
+              <button type="button" class="ponto" aria-label="Ver item 5"></button>
+              <button type="button" class="ponto" aria-label="Ver item 6"></button>
+            </div>
+            <span class="reels-dica">Deslize para ver mais</span>
+          </div>
+          <h3>Grafite e artesanato</h3>
+          <p>Também venho buscando explorar um lado criativo mais físico com esculturas e grafites.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape" id="contato">
+    <div>
+      <h2>Vamos conversar?</h2>
+      <a href="mailto:juancitomontania@gmail.com">juancitomontania@gmail.com</a>
+    </div>
+    <div class="redes">
+      <a href="https://www.linkedin.com/in/juan-montania/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/juangmont" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
